@@ -3,7 +3,13 @@ var rootURL = "restapi/questions";
 
 findAllQuestions();
 
-
+function askQuestion(){
+	alert("1");
+	$("#main_content").hide();
+	$("#askquestion").load("askquestion.html");
+	$("#askquestion").show();
+	alert("2");
+}
 
 
 function findAllQuestions() {

@@ -1,0 +1,302 @@
+/* ---------------------------------------- */
+/* H E A D E R  S T Y L E                   */
+/* ---------------------------------------- */
+
+.loading-blur{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 998;
+}
+
+.loading-img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background: url('../img/loading.gif') center center no-repeat;
+}
+
+.loading-overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	opacity: 0.5;
+	filter: alpha(opacity:50);
+	background: #ffffff;
+}
+#header {
+	min-height: 80px;
+}
+#logo {
+	padding-left: 20px;
+	line-height: 80px;
+}
+#logo img {
+	max-height: 70px;
+}
+#header .top-menu {
+	float: right;
+}
+.header-menu {
+	background: #19202e;
+	min-height: 80px;
+	text-align: center;
+	float: right;
+	margin-right: -15px;
+}
+.header-menu > ul {
+	list-style: none;
+	padding: 0;
+	font-size: 0;
+}
+.header-menu > ul > li > a {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 80px;
+}
+.header-menu ul li {
+	display: inline-block;
+	padding: 0 15px;
+	position: relative;
+}
+.header-menu ul .menu-item-has-children {
+	padding-right: 20px;
+}
+.header-menu ul .menu-item-has-children > i {
+	position: absolute;
+	top: 34px;
+	right: 3px;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+/** Sub menu **/
+.header-menu ul li > .sub-menu {
+	position: absolute;
+	left: 0;
+	background-color: #19202e;
+	z-index: 9999;
+	line-height: initial;
+	text-align: left;
+	min-width: 100%;
+	display: none;
+	font-size: 13px;
+}
+
+.header-menu ul li > .sub-menu li {
+	padding: 0;
+}
+
+.header-menu ul li > .sub-menu li,
+.header-menu ul li > .sub-menu li a{
+	display: block;
+}
+
+.header-menu ul li > .sub-menu li a {
+	padding: 15px;
+	border-top: 1px solid rgba(255,255,255,.2);
+	white-space: nowrap;
+	line-height: normal;
+}
+
+.header-menu ul li > .sub-menu li a:hover {
+	background: rgba(255,255,255,.1);
+}
+
+.header-menu ul li > .sub-menu li a:hover:before{
+	display: block;
+}
+
+.header-menu ul li > .sub-menu li a:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 4px;
+	background-color: #3498db;
+	display: none;
+
+}
+
+.header-menu ul li:hover .sub-menu {
+	display: block;
+}
+
+.header-menu > ul > li:hover > i {
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+}
+
+.header-menu ul li a,
+.header-menu ul li i{
+	color: #78829d;
+	text-decoration: none;
+	/*TRANSISTIONS*/
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+.header-avatar {
+	padding-top: 25px;
+	position:relative;
+}
+.header-avatar span.display_name,
+.header-avatar i,
+.header-menu ul li a:hover,
+.header-menu > ul > li:hover > a,
+.header-menu > ul > li:hover > i{
+	color: #3498db;
+}
+.header-avatar span.expand {
+	display: block;
+	padding: 0 5px;
+}
+.header-avatar span.display_name {
+	max-width: 80px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 2;
+	vertical-align: middle;
+}
+.header-avatar .dropdown-account {
+	display:block;
+	outline: none;
+}
+.header-avatar .dropdown-toggle {
+	box-shadow: none !important;
+}
+.header-avatar .dropdown-account .icon-down{
+	vertical-align: middle;
+	margin: 0;
+}
+.header-avatar.open .dropdown-account .icon-down i{
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+}
+.header-avatar .avatar img {
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	max-width: 100%;
+}
+.header-avatar .dropdown-account span {
+	display: inline-block;
+	margin-right: 15px;
+}
+.header-avatar span.avatar {
+	max-width: 30px;
+}
+.header-search-wrapper {
+	margin-top: 23px;
+	/*float: right;*/
+	/*position: relative;*/
+	position: absolute;
+	margin-right: 20px;
+}
+#header_search {}
+#header_search input {
+	width: 350px;
+	height: 32px;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	padding-left: 15px;
+	outline: none;
+	color: #8c97b2;
+	border: 1px solid rgba(140,151,178,.4); /* stroke */
+	-moz-border-radius: 16px / 15px;
+	-webkit-border-radius: 16px / 15px;
+	border-radius: 16px / 15px; /* border radius */
+	background-color: #fff; /* layer fill content */
+	/*TRANSISTIONS*/
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+#header_search:hover input{
+	width: 400px;
+}
+#header_search i {
+	display: inline-block;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	color:#8b97b1;
+}
+ul.dropdown-profile {
+	right: 0 !important;
+	left: auto !important;
+	margin-top: 25px;
+	background: #2f364a;
+	width: 100%;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	padding: 0;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+ul.dropdown-profile li {
+	display: block;
+	width: 100%;
+	border-top: 1px solid #19202e;
+}
+
+ul.dropdown-profile li a {
+	color: #78829d;
+	display: block;
+	width: 100%;
+	padding-left: 16px;
+	line-height: 40px;
+	border-left: 4px solid transparent;
+	/*TRANSISTIONS*/
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+ul.dropdown-profile li a i {
+	color: #78829d;
+	margin-right: 13px;
+}
+ul.dropdown-profile li a i.fa-question {
+	margin-right: 15px;
+	font-size: 18px;
+}
+ul.dropdown-profile li:hover a,
+ul.dropdown-profile li:hover a i{
+	color: #3498db;
+}
+ul.dropdown-profile li:hover a {
+	border-left: 4px solid #3498db;
+	background: #fff;
+}
+a.login-url {
+	line-height: 80px;
+	display: block;
+	text-align: center;
+}
+.must-log-in a.login-url, .et-comment-reply a.login-url{
+    line-height: inherit;
+    display: inline;
+    text-align: inherit;
+}

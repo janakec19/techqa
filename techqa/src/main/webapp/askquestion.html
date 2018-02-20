@@ -1,111 +1,268 @@
 <!DOCTYPE html>
-<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<!-- Basic Page Needs -->
-	
-	<title>Ask Question</title>
-	
-	
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Main Style -->
-	<link rel="stylesheet" href="css/style.css">
-	
-	<!-- Skins -->
-	<link rel="stylesheet" href="css/skins.css">
-	
-	<!-- Responsive Style -->
-	<link rel="stylesheet" href="css/responsive.css">
-	
-  
+<!-- Basic Page Needs -->
+
+<title>Ask Question</title>
+
+
+<!-- Mobile Specific Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Main Style -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Skins -->
+<link rel="stylesheet" href="css/skins.css">
+
+<!-- Responsive Style -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- header -->
+
+<link rel="stylesheet" id="push-menu-css" href="css/push-menu.css"
+	type="text/css" media="all">
+<link rel="stylesheet" id="main-header-css" href="css/header.css"
+	type="text/css" media="all">
+<link rel="stylesheet" id="custom-style-css" href="css/custom.css"
+	type="text/css" media="all">
+<!-- textarea -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/froala_editor.css">
+<link rel="stylesheet" href="css/froala_style.css">
+<link rel="stylesheet" href="css/code_view.css">
+
 </head>
-<body style="">
-<section class="container main-content">
+<body
+	class="home page-template page-template-page-questions page-template-page-questions-php page page-id-12 cbp-spmenu-push">
+	<div class="container-fluid">
 		<div class="row">
-		
-			<div class="col-md-9">
-				
-				<div class="page-content ask-question">
-					<div class="boxedtitle page-title"><h2>Ask Question</h2></div>
-					
-					
-					
-					<div class="form-style form-style-3" id="question-submit">
-						<form>
-							<div class="form-inputs clearfix">
-								<p style="
-    height: auto;
-">
-									<label class="required">Question Title<span>*</span></label>
-									<input type="text" id="question-title">
-									<span class="form-description">Please choose an appropriate title for the question to answer it even easier .</span>
-								</p>
-								
-									
-								
-								<p style="
-    height: auto;
-">
-									<label class="required">Category<span>*</span></label>
-									<span class="styled-select">
-										<select>
-											<option value="">Select a Category</option>
-											<option value="1">Category 1</option>
-											<option value="2">Category 2</option>
-										</select>
-									</span>
-									<span class="form-description">Please choose the appropriate section so easily search for your question .</span>
-								</p>
-								
-								<div class="clearfix"></div>
-								<div class="poll_options" style="display: none;">
-									<p class="form-submit add_poll">
-										<button id="add_poll" type="button" class="button color small submit"><i class="icon-plus"></i>Add Field</button>
-									</p>
-									<ul id="question_poll_item" class="ui-sortable">
-										<li id="poll_li_1">
-											<div class="poll-li">
-												<p><input id="ask[1][title]" class="ask" name="ask[1][title]" value="" type="text"></p>
-												<input id="ask[1][value]" name="ask[1][value]" value="" type="hidden">
-												<input id="ask[1][id]" name="ask[1][id]" value="1" type="hidden">
-												<div class="del-poll-li"><i class="icon-remove"></i></div>
-												<div class="move-poll-li"><i class="icon-fullscreen"></i></div>
-											</div>
-										</li>
-									</ul>
-									<script> var nextli = 2;</script>
-									<div class="clearfix"></div>
-								</div>
-								
-								<label>Attachment</label>
-								<div class="fileinputs">
-									<input type="file" class="file">
-									<div class="fakefile">
-										<button type="button" class="button small margin_0">Select file</button>
-										<span><i class="icon-arrow-up"></i>Browse</span>
-									</div>
-								</div>
-								
-							</div>
-							<div id="form-textarea">
-								<p>
-									<label class="required">Details<span>*</span></label>
-									<textarea id="question-details" aria-required="true" cols="58" rows="8"></textarea>
-									<span class="form-description">Type the description thoroughly and in detail .</span>
-								</p>
-							</div>
-							<p class="form-submit">
-								<input type="submit" id="publish-question" value="Publish Your Question" class="button color small submit">
-							</p>
+			<header id="header">
+				<div class="col-md-2 col-xs-2" id="logo">
+					<a href="https://qaengine.enginethemes.com/"> <img
+						src="./logo.png">
+					</a>
+				</div>
+				<!-- logo -->
+				<div id="menu_qa" class="col-md-8 col-xs-8">
+					<!-- menu -->
+					<div class="header-search-wrapper">
+						<section class="buttonset">
+							<button id="showLeftPush">
+								<i class="fa fa-question"></i>
+							</button>
+							<button id="showRightPush">
+								<i class="fa fa-bar-chart-o"></i>
+							</button>
+
+							<!-- <button id="showLeft"><i class="fa fa-question"></i></button>
+								<button id="showRight"><i class="fa fa-bar-chart-o"></i></button> -->
+							<button id="showTop">
+								<i class="fa fa-list"></i>
+							</button>
+						</section>
+						<form id="header_search" method="GET"
+							action="https://qaengine.enginethemes.com/"
+							class="disable-mobile-search">
+							<input type="text" name="keyword" required="" value=""
+								placeholder="Enter Keywords" autocomplete="off"> <i
+								class="fa fa-search"></i>
+							<div id="search_preview" class="search-preview empty"></div>
 						</form>
 					</div>
-				</div><!-- End page-content -->
-			</div><!-- End main -->
-			<!-- End sidebar -->
-		</div><!-- End row -->
-	</section>
+					<!-- search -->
+				</div>
+				<div id="login_qa" class="col-md-2 col-xs-2 btn-group ">
+
+					<a class="login-url" href="javascript:void(0)" data-toggle="modal">
+						Login or Register </a>
+
+				</div>
+				<!-- avatar -->
+			</header>
+			<!-- END HEADER -->
+			<div class="col-md-12 col-xs-12" id="header_sidebar"></div>
+			<div class="clearfix"></div>
+			<div itemtype="http://schema.org/ItemList"
+				class="col-md-8 main-content" style="margin-top: 5px;">
+				<section class="container main-content">
+					<div class="row">
+
+						<div class="col-md-9">
+
+							<div class="page-content ask-questions">
+								<div class="boxedtitle page-title">
+									<h2>Ask Question</h2>
+								</div>
 
 
 
-</body></html>
+								<div class="form-style form-style-3" id="question-submit">
+									<form>
+										<div class="form-inputs clearfix">
+											<p style="height: auto;">
+												<label class="required">Question Title<span>*</span></label>
+												<input type="text" id="question-title">
+											</p>
+
+
+
+											<p style="height: auto;">
+												<label class="required">Category<span>*</span></label> <span
+													class="styled-select"> <select>
+														<option value="">Select a Category</option>
+														<option value="1">Category 1</option>
+														<option value="2">Category 2</option>
+												</select>
+												</span>
+											</p>
+
+											<div class="clearfix"></div>
+											<div class="poll_options" style="display: none;">
+												<p class="form-submit add_poll">
+													<button id="add_poll" type="button"
+														class="button color small submit">
+														<i class="icon-plus"></i>Add Field
+													</button>
+												</p>
+												<ul id="question_poll_item" class="ui-sortable">
+													<li id="poll_li_1">
+														<div class="poll-li">
+															<p>
+																<input id="ask[1][title]" class="ask"
+																	name="ask[1][title]" value="" type="text">
+															</p>
+															<input id="ask[1][value]" name="ask[1][value]" value=""
+																type="hidden"> <input id="ask[1][id]"
+																name="ask[1][id]" value="1" type="hidden">
+															<div class="del-poll-li">
+																<i class="icon-remove"></i>
+															</div>
+															<div class="move-poll-li">
+																<i class="icon-fullscreen"></i>
+															</div>
+														</div>
+													</li>
+												</ul>
+												<script>
+													var nextli = 2;
+												</script>
+												<div class="clearfix"></div>
+											</div>
+
+
+											<p>
+												<label class="required">Details<span>*</span></label>
+											<div id="editor">
+												<textarea id='edit' style="margin-top: 30px;"
+													placeholder="Type some text"> </textarea>
+											</div>
+											</p>
+
+											<label>Attachment</label>
+											<div class="fileinputs">
+												<input type="file" class="file">
+												<div class="fakefile">
+													<button type="button" class="button small margin_0">Select
+														file</button>
+													<span><i class="icon-arrow-up"></i>Browse</span>
+												</div>
+											</div>
+
+
+
+											<p class="form-submit">
+												<input type="submit" id="publish-question"
+													value="Publish Your Question"
+													class="button color small submit">
+											</p>
+										</div>
+
+									</form>
+								</div>
+							</div>
+							<!-- End page-content -->
+						</div>
+						<!-- End main -->
+						<!-- End sidebar -->
+					</div>
+					<!-- End row -->
+				</section>
+
+			</div>
+
+			<div class="col-md-2 disable-mobile right-sidebar"
+				style="width: 32%; margin-top: 5px;">
+				<div class="page-content">
+					<div class="boxedtitle page-title">
+						<h2>Asked Questions</h2>
+					</div>
+					<ul id="menu-left-menu-1" class="menu">
+						<li><a
+							href="http://enginethemes.com/demo/qaengine/">Questions</a></li>
+						<li><a
+							href="https://qaengine.enginethemes.com/tags-4/">Tags</a></li>
+						<li><a
+							href="https://qaengine.enginethemes.com/badges/">Badges</a></li>
+						<li><a
+							href="https://qaengine.enginethemes.com/categories-3/">Categories</a></li>
+						<li><a
+							href="https://qaengine.enginethemes.com/users/">Users</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- END RIGHT-SIDEBAR -->
+
+		</div>
+		<!-- END ROW -->
+	</div>
+	<!-- END CONTAINER-FLUID -->
+
+	<!-- textarea Js -->
+
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/froala_editor.min.js"></script>
+	<script type="text/javascript" src="js/align.min.js"></script>
+	<script type="text/javascript" src="js/code_view.min.js"></script>
+	<script type="text/javascript" src="js/paragraph_format.min.js"></script>
+	<script type="text/javascript" src="js/paragraph_style.min.js"></script>
+
+
+	<script>
+		$(function() {
+
+			$('#edit').on('froalaEditor.initialized', function(e, editor) {
+				$('#edit').parents('form').on('submit', function() {
+					console.log($('#edit').val());
+					return false;
+				})
+			}).froalaEditor({
+				enter : $.FroalaEditor.ENTER_P,
+				placeholderText : null
+			})
+			$("#insertImage-1").remove();
+			// $("#insertLink-1" ).remove();
+			$("#insertVideo-1").remove();
+		});
+
+		function callMe() {
+			var x = document.getElementById("edit").value;
+			alert(x);
+
+			var div = document.getElementById('editorpre');
+			div.innerHTML = x;
+			// loadTextArea();
+		}
+	</script>
+
+
+
+	<!-- END BODY -->
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.techqa.rest.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
@@ -22,9 +24,9 @@ public class Question implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Question [id=" + id + ", title=" + getTitle() + ", content=" + content + ", views=" + getViews() + ", category="
-				+ getCategory() + ", user=" + user + ", creationDate=" + creationDate + ", lastUpdateDate=" + lastUpdateDate
-				+ "]";
+		return "Question [id=" + id + ", title=" + getTitle() + ", content=" + content + ", views=" + getViews()
+				+ ", category=" + getCategory() + ", user=" + user + ", creationDate=" + creationDate
+				+ ", lastUpdateDate=" + lastUpdateDate + "]";
 	}
 
 	private static final long serialVersionUID = 4235393151425571253L;
@@ -42,9 +44,8 @@ public class Question implements Serializable {
 	@Column
 	private int views;
 
-	/*
-	 * @OneToMany(mappedBy = "topic") private List<Answer> answers;
-	 */
+	@OneToMany(mappedBy = "question")
+	private List<Answer> answers;
 
 	@Column
 	private String category;

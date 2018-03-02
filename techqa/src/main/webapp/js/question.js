@@ -4,7 +4,7 @@ var rootURL = "restapi/questions";
 findAllQuestions();
 
 
-function renderAnswer(){
+function renderAnswer(questionId){
 	$.get("answer.html", function(data){
 		var divcontent =data;
 	    $("#main_content").html(divcontent);

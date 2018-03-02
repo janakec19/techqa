@@ -1,24 +1,37 @@
 
-var rootURL = "restapi/questions";
+var getAllQuestionsURI = "restapi/questions";
+var getAnswerURI = "restapi/answer";
 
 findAllQuestions();
 
 
-function renderAnswer(questionId){
-	$.get("answer.html", function(data){
-		var divcontent =data;
+function renderAnswer(data){
+	
+	$.get("answer.html", function(dataHtml){
+		var divcontent =dataHtml;
 	    $("#main_content").html(divcontent);
 	});
 }
 
 
-
+function getAnswer(questionId) {
+	console.log('getAnswer');
+	$.ajax({
+		type : 'GET',
+		url : getAnswerURI,
+		data: { 
+			questionId: questionId
+		  },
+		dataType : "json", 
+		success : renderAnswer
+	});
+}
 
 function findAllQuestions() {
 	console.log('findAllQuestions');
 	$.ajax({
 		type : 'GET',
-		url : rootURL,
+		url : getAllQuestionsURI,
 		dataType : "json", 
 		success : renderQuestionList
 	});
@@ -32,7 +45,7 @@ function renderQuestionList(data) {
 		var result='<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item" >'
 			+'<div itemprop="item" itemscope="" itemtype="http://schema.org/Question">'
 			+'<div class="col-md-8 col-xs-8 q-left-content"><div class="q-ltop-content"><h2 itemprop="name">'
-			+'<a itemprop="url" href="#" class="question-title">'+val.title+'</a></h2></div>'
+			+'<a itemprop="url" href="#" onclick="renderAnswer('+val.id+');" class="question-title">'+val.title+'</a></h2></div>'
 			+'<div class="q-lbtm-content"><div itemprop="text" class="question-excerpt">'
 			+'<p>'+val.content+'</p></div><div class="question-cat"><ul class="question-tags"><li><a class="q-tag" href="#">'+val.category+' </a></li></ul>'
 			+'<div class="clearfix"></div><a itemprop="author" itemscope="" itemtype="http://schema.org/Person" href="#"><span class="author-avatar"> <img itemprop="image" src="./1282.jpg" class="avatar" alt="">'
